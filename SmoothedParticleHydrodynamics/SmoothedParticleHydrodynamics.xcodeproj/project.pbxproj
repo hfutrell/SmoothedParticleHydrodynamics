@@ -1,0 +1,390 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD21B0EC1D6FAA5000B2AE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD21B0EB1D6FAA5000B2AE1F /* AppDelegate.swift */; };
+		FD21B0EE1D6FAA5000B2AE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD21B0ED1D6FAA5000B2AE1F /* Assets.xcassets */; };
+		FD21B0F11D6FAA5000B2AE1F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD21B0EF1D6FAA5000B2AE1F /* MainMenu.xib */; };
+		FD21B0FC1D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD21B0FB1D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD21B0F81D6FAA5100B2AE1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD21B0E01D6FAA5000B2AE1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD21B0E71D6FAA5000B2AE1F;
+			remoteInfo = SmoothedParticleHydrodynamics;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FD21B0E81D6FAA5000B2AE1F /* SmoothedParticleHydrodynamics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmoothedParticleHydrodynamics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD21B0EB1D6FAA5000B2AE1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FD21B0ED1D6FAA5000B2AE1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD21B0F01D6FAA5000B2AE1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FD21B0F21D6FAA5000B2AE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD21B0F71D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmoothedParticleHydrodynamicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD21B0FB1D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothedParticleHydrodynamicsTests.swift; sourceTree = "<group>"; };
+		FD21B0FD1D6FAA5100B2AE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD21B0E51D6FAA5000B2AE1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD21B0F41D6FAA5100B2AE1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD21B0DF1D6FAA5000B2AE1F = {
+			isa = PBXGroup;
+			children = (
+				FD21B0EA1D6FAA5000B2AE1F /* SmoothedParticleHydrodynamics */,
+				FD21B0FA1D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests */,
+				FD21B0E91D6FAA5000B2AE1F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD21B0E91D6FAA5000B2AE1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD21B0E81D6FAA5000B2AE1F /* SmoothedParticleHydrodynamics.app */,
+				FD21B0F71D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD21B0EA1D6FAA5000B2AE1F /* SmoothedParticleHydrodynamics */ = {
+			isa = PBXGroup;
+			children = (
+				FD21B0EB1D6FAA5000B2AE1F /* AppDelegate.swift */,
+				FD21B0ED1D6FAA5000B2AE1F /* Assets.xcassets */,
+				FD21B0EF1D6FAA5000B2AE1F /* MainMenu.xib */,
+				FD21B0F21D6FAA5000B2AE1F /* Info.plist */,
+			);
+			path = SmoothedParticleHydrodynamics;
+			sourceTree = "<group>";
+		};
+		FD21B0FA1D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD21B0FB1D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.swift */,
+				FD21B0FD1D6FAA5100B2AE1F /* Info.plist */,
+			);
+			path = SmoothedParticleHydrodynamicsTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FD21B0E71D6FAA5000B2AE1F /* SmoothedParticleHydrodynamics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD21B1001D6FAA5100B2AE1F /* Build configuration list for PBXNativeTarget "SmoothedParticleHydrodynamics" */;
+			buildPhases = (
+				FD21B0E41D6FAA5000B2AE1F /* Sources */,
+				FD21B0E51D6FAA5000B2AE1F /* Frameworks */,
+				FD21B0E61D6FAA5000B2AE1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmoothedParticleHydrodynamics;
+			productName = SmoothedParticleHydrodynamics;
+			productReference = FD21B0E81D6FAA5000B2AE1F /* SmoothedParticleHydrodynamics.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FD21B0F61D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD21B1031D6FAA5100B2AE1F /* Build configuration list for PBXNativeTarget "SmoothedParticleHydrodynamicsTests" */;
+			buildPhases = (
+				FD21B0F31D6FAA5100B2AE1F /* Sources */,
+				FD21B0F41D6FAA5100B2AE1F /* Frameworks */,
+				FD21B0F51D6FAA5100B2AE1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD21B0F91D6FAA5100B2AE1F /* PBXTargetDependency */,
+			);
+			name = SmoothedParticleHydrodynamicsTests;
+			productName = SmoothedParticleHydrodynamicsTests;
+			productReference = FD21B0F71D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD21B0E01D6FAA5000B2AE1F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Holmes Futrell";
+				TargetAttributes = {
+					FD21B0E71D6FAA5000B2AE1F = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					FD21B0F61D6FAA5100B2AE1F = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = FD21B0E71D6FAA5000B2AE1F;
+					};
+				};
+			};
+			buildConfigurationList = FD21B0E31D6FAA5000B2AE1F /* Build configuration list for PBXProject "SmoothedParticleHydrodynamics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FD21B0DF1D6FAA5000B2AE1F;
+			productRefGroup = FD21B0E91D6FAA5000B2AE1F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD21B0E71D6FAA5000B2AE1F /* SmoothedParticleHydrodynamics */,
+				FD21B0F61D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD21B0E61D6FAA5000B2AE1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD21B0EE1D6FAA5000B2AE1F /* Assets.xcassets in Resources */,
+				FD21B0F11D6FAA5000B2AE1F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD21B0F51D6FAA5100B2AE1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD21B0E41D6FAA5000B2AE1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD21B0EC1D6FAA5000B2AE1F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD21B0F31D6FAA5100B2AE1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD21B0FC1D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD21B0F91D6FAA5100B2AE1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD21B0E71D6FAA5000B2AE1F /* SmoothedParticleHydrodynamics */;
+			targetProxy = FD21B0F81D6FAA5100B2AE1F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FD21B0EF1D6FAA5000B2AE1F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FD21B0F01D6FAA5000B2AE1F /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FD21B0FE1D6FAA5100B2AE1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FD21B0FF1D6FAA5100B2AE1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FD21B1011D6FAA5100B2AE1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SmoothedParticleHydrodynamics/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = HolmesFutrell.SmoothedParticleHydrodynamics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FD21B1021D6FAA5100B2AE1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SmoothedParticleHydrodynamics/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = HolmesFutrell.SmoothedParticleHydrodynamics;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FD21B1041D6FAA5100B2AE1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SmoothedParticleHydrodynamicsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = HolmesFutrell.SmoothedParticleHydrodynamicsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmoothedParticleHydrodynamics.app/Contents/MacOS/SmoothedParticleHydrodynamics";
+			};
+			name = Debug;
+		};
+		FD21B1051D6FAA5100B2AE1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SmoothedParticleHydrodynamicsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = HolmesFutrell.SmoothedParticleHydrodynamicsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmoothedParticleHydrodynamics.app/Contents/MacOS/SmoothedParticleHydrodynamics";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD21B0E31D6FAA5000B2AE1F /* Build configuration list for PBXProject "SmoothedParticleHydrodynamics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD21B0FE1D6FAA5100B2AE1F /* Debug */,
+				FD21B0FF1D6FAA5100B2AE1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD21B1001D6FAA5100B2AE1F /* Build configuration list for PBXNativeTarget "SmoothedParticleHydrodynamics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD21B1011D6FAA5100B2AE1F /* Debug */,
+				FD21B1021D6FAA5100B2AE1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FD21B1031D6FAA5100B2AE1F /* Build configuration list for PBXNativeTarget "SmoothedParticleHydrodynamicsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD21B1041D6FAA5100B2AE1F /* Debug */,
+				FD21B1051D6FAA5100B2AE1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD21B0E01D6FAA5000B2AE1F /* Project object */;
+}
