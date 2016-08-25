@@ -25,11 +25,9 @@ struct Particle {
     }
 }
 
-func leonardJones(x1: CGPoint, x2: CGPoint) -> CGPoint {
+func leonardJones(x1: CGPoint, x2: CGPoint, k: CGFloat) -> CGPoint {
     
     // computes Leonard Jones forces between two particles
-    
-    let k: CGFloat = 1.0 // what should this really be?
     let k1 = k
     let k2 = k;
     let m: CGFloat = 4
@@ -38,10 +36,10 @@ func leonardJones(x1: CGPoint, x2: CGPoint) -> CGPoint {
     let diff: CGPoint = x1 - x2
     let length: CGFloat = diff.length
     
-    let l1: CGFloat = pow(length, m)
-    let l2: CGFloat = pow(length, n)
+    let l1: CGFloat = pow(k1 / length, m)
+    let l2: CGFloat = pow(k2 / length, n)
     
-    return ((k1 / l1) - (k2 / l2)) * (diff / length)
+    return (l1 - l2) * (diff / length)
     
 }
 
@@ -53,6 +51,9 @@ extension CGPoint {
         let x = self.x
         let y = self.y
         return x * x + y * y
+    }
+    func normalize() -> CGPoint {
+        return self / self.length
     }
 }
 func += (inout left: CGPoint, right: CGPoint) {
