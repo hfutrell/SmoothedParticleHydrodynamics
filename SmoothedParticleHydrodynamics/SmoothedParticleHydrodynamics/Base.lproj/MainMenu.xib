@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6233" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6233"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,7 +12,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="SmoothedParticleHydrodynamics" customModuleProvider="target">
             <connections>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -674,6 +675,17 @@
             <view key="contentView" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="whX-hQ-WaJ" customClass="ParticleView" customModule="SmoothedParticleHydrodynamics" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="whX-hQ-WaJ" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="JhO-Kz-INL"/>
+                    <constraint firstItem="whX-hQ-WaJ" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="OLu-Jv-Cn0"/>
+                    <constraint firstAttribute="bottom" secondItem="whX-hQ-WaJ" secondAttribute="bottom" id="nrE-Nq-kKf"/>
+                    <constraint firstAttribute="trailing" secondItem="whX-hQ-WaJ" secondAttribute="trailing" id="png-Dv-9NQ"/>
+                </constraints>
             </view>
         </window>
     </objects>
