@@ -11,6 +11,7 @@
 		FD21B0EE1D6FAA5000B2AE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD21B0ED1D6FAA5000B2AE1F /* Assets.xcassets */; };
 		FD21B0F11D6FAA5000B2AE1F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD21B0EF1D6FAA5000B2AE1F /* MainMenu.xib */; };
 		FD21B0FC1D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD21B0FB1D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.swift */; };
+		FD21B1071D6FAAA100B2AE1F /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD21B1061D6FAAA100B2AE1F /* Particle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		FD21B0F71D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmoothedParticleHydrodynamicsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD21B0FB1D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmoothedParticleHydrodynamicsTests.swift; sourceTree = "<group>"; };
 		FD21B0FD1D6FAA5100B2AE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD21B1061D6FAAA100B2AE1F /* Particle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				FD21B0EB1D6FAA5000B2AE1F /* AppDelegate.swift */,
+				FD21B1061D6FAAA100B2AE1F /* Particle.swift */,
 				FD21B0ED1D6FAA5000B2AE1F /* Assets.xcassets */,
 				FD21B0EF1D6FAA5000B2AE1F /* MainMenu.xib */,
 				FD21B0F21D6FAA5000B2AE1F /* Info.plist */,
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD21B0EC1D6FAA5000B2AE1F /* AppDelegate.swift in Sources */,
+				FD21B1071D6FAAA100B2AE1F /* Particle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
