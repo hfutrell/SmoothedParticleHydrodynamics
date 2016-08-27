@@ -387,6 +387,7 @@
 				FD21B1021D6FAA5100B2AE1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD21B1031D6FAA5100B2AE1F /* Build configuration list for PBXNativeTarget "SmoothedParticleHydrodynamicsTests" */ = {
 			isa = XCConfigurationList;
@@ -395,6 +396,7 @@
 				FD21B1051D6FAA5100B2AE1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

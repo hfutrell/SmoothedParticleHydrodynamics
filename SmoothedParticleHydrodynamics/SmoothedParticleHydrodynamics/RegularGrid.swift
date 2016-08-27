@@ -14,6 +14,7 @@ protocol CellObjectProtocol {
 
 internal class Cell<ObjectType> {
     var count: Int = 0
+    var debugCount: Int = 0
     var firstIndex: Int = 0
     var objects: UnsafeMutablePointer<ObjectType> = nil // todo: remove, it's not strictly necessary to have this pointer
     func insert(object: ObjectType) {
@@ -61,7 +62,7 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
 
         self.cellData = NSMutableData(length: sizeof(Cell<ObjectType>) * numCells )! // zero-filled per documentation
         self.cells = UnsafeMutablePointer<Cell<ObjectType>>(cellData.bytes)
-
+        
         self.numObjects = 0
         self.maxObjects = maxObjects
         
@@ -80,18 +81,26 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
     }
     
     func cell(atHorizontalIndex horizontalIndex: Int, verticalIndex: Int) -> Cell<ObjectType> {
-        assert(horizontalIndex > 0 && horizontalIndex < self.horizontalCells)
-        assert(verticalIndex > 0 && verticalIndex < self.verticalCells)
+        assert(horizontalIndex >= 0 && horizontalIndex < self.horizontalCells)
+        assert(verticalIndex >= 0 && verticalIndex < self.verticalCells)
         let index = verticalIndex * self.cellStride + horizontalIndex
         return self.cells[index]
     }
     
-    func setObjects(objects: [ObjectType]) {
-        assert(objects.count < self.maxObjects)
+    func setObjects(objects: UnsafePointer<ObjectType>, count: Int) {
+        assert(count < self.maxObjects && objects != nil)
+        
+        // step 0: reset cells completely
+        for i in 0..<self.numCells {
+            cells[i] = Cell<ObjectType>()
+        }
+
         // step 1: update counts for all cells
-        for object in objects {
+        for i in 0..<count {
+            let object = objects[i]
             let cell = self.cell(atLocation: object.x)
             cell.count += 1
+            cell.debugCount += 1
         }
         // step 2: use counts to allocate memory for cells and reset counts
         var numObjectsSoFar: Int = 0
@@ -102,7 +111,8 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
             cells[i].count = 0 // we have to reset this because cell.insert uses it to determine what index to use when inserting
         }
         // step 3: insert objects
-        for object in objects {
+        for i in 0..<count {
+            let object = objects[i]
             let cell = self.cell(atLocation: object.x)
             cell.insert(object)
         }
@@ -112,13 +122,19 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
     
     // todo: copy object list function 
     
-    func runPairwiseSpatialFunction(withCallback callback: (index1: Int, index2: Int, object1: ObjectType, object2: ObjectType ) -> Void, maxDistance: Double) {
+    func runFunction(callback: (index: Int, object: ObjectType) ->Void) {
+        for i in 0..<self.numObjects {
+            callback(index: i, object: self.objects[i])
+        }
+    }
+    
+    func runPairwiseSpatialFunction(callback: (index1: Int, index2: Int, inout object1: ObjectType, inout object2: ObjectType ) -> Void, maxDistance: Double) {
         
         let cellsToCheck: Int = Int(ceil(maxDistance / self.cellSize))
         
         for objectIndex1 in 0..<self.numObjects {
 
-            let object1: ObjectType = self.objects[objectIndex1]
+            var object1: ObjectType = self.objects[objectIndex1]
             let horizontalCellIndex: Int = Int(floor(Double(object1.x.x) / cellSize))
             let verticalCellIndex: Int   = Int(floor(Double(object1.x.y) / cellSize))
 
@@ -137,15 +153,15 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
                 let firstCell = self.cell(atHorizontalIndex: minL, verticalIndex: k)
                 let lastCell = self.cell(atHorizontalIndex: maxL, verticalIndex: k)
                 for objectIndex2 in firstCell.firstIndex..<(lastCell.firstIndex+lastCell.count) {
-                    let object2 : ObjectType = self.objects[objectIndex2]
-                    callback(index1: objectIndex1, index2: objectIndex2, object1: object1, object2: object2)
+                    var object2 : ObjectType = self.objects[objectIndex2]
+                    callback(index1: objectIndex1, index2: objectIndex2, object1: &object1, object2: &object2)
                 }
             }
             // special handling of row with k = maxK = verticalCellIndex, where early exit of loop is required to ensure objectIndex2 < objectIndex1
             let firstCell = self.cell(atHorizontalIndex: minL, verticalIndex: verticalCellIndex)
             for objectIndex2 in firstCell.firstIndex..<objectIndex1 {
-                let object2 : ObjectType = self.objects[objectIndex2]
-                callback(index1: objectIndex1, index2: objectIndex2, object1: object1, object2: object2)
+                var object2 : ObjectType = self.objects[objectIndex2]
+                callback(index1: objectIndex1, index2: objectIndex2, object1: &object1, object2: &object2)
             }
             
         } // end objectIndex1

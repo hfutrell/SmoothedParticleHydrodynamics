@@ -8,17 +8,20 @@
 
 import Foundation
 
-struct Particle {
+struct Particle: CellObjectProtocol {
     var x: CGPoint
     var v: CGPoint
     var m: CGFloat
+    var f: CGPoint
     init(x: CGPoint, v: CGPoint, m: CGFloat) {
         self.x = x;
         self.v = v;
         self.m = m;
+        self.f = CGPoint(x: 0.0, y: 0.0)
     }
-    mutating func applyForce(force: CGPoint, timeDelta: CGFloat) {
-        self.v += force * timeDelta
+    mutating func applyForces(timeDelta: CGFloat) {
+        self.v += self.f * timeDelta
+        self.f = CGPoint(x: 0.0, y: 0.0)
     }
     mutating func updatePosition(timeDelta: CGFloat) {
         self.x += self.v * timeDelta
