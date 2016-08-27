@@ -13,6 +13,7 @@
 		FD21B0FC1D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD21B0FB1D6FAA5100B2AE1F /* SmoothedParticleHydrodynamicsTests.swift */; };
 		FD21B1071D6FAAA100B2AE1F /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD21B1061D6FAAA100B2AE1F /* Particle.swift */; };
 		FD21B1091D6FBB4600B2AE1F /* ParticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD21B1081D6FBB4600B2AE1F /* ParticleView.swift */; };
+		FD21B10B1D70BBBC00B2AE1F /* RegularGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD21B10A1D70BBBC00B2AE1F /* RegularGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		FD21B0FD1D6FAA5100B2AE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD21B1061D6FAAA100B2AE1F /* Particle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 		FD21B1081D6FBB4600B2AE1F /* ParticleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticleView.swift; sourceTree = "<group>"; };
+		FD21B10A1D70BBBC00B2AE1F /* RegularGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegularGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				FD21B0EB1D6FAA5000B2AE1F /* AppDelegate.swift */,
 				FD21B1061D6FAAA100B2AE1F /* Particle.swift */,
 				FD21B1081D6FBB4600B2AE1F /* ParticleView.swift */,
+				FD21B10A1D70BBBC00B2AE1F /* RegularGrid.swift */,
 				FD21B0ED1D6FAA5000B2AE1F /* Assets.xcassets */,
 				FD21B0EF1D6FAA5000B2AE1F /* MainMenu.xib */,
 				FD21B0F21D6FAA5000B2AE1F /* Info.plist */,
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD21B10B1D70BBBC00B2AE1F /* RegularGrid.swift in Sources */,
 				FD21B0EC1D6FAA5000B2AE1F /* AppDelegate.swift in Sources */,
 				FD21B1091D6FBB4600B2AE1F /* ParticleView.swift in Sources */,
 				FD21B1071D6FAAA100B2AE1F /* Particle.swift in Sources */,
@@ -273,7 +277,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Debug;
 		};
