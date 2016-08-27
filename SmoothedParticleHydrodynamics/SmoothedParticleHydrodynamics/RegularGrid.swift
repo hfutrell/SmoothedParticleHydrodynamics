@@ -113,53 +113,38 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
     func generateObjectsByApplyingSpacialFunction(nextObjects: UnsafeMutablePointer<ObjectType>,
                 maxDistance: Double,
                 initializeCallback: (index: Int, objects: UnsafeMutablePointer<ObjectType>, referenceObject: ObjectType ) -> Void,
-                     applyCallback: (index: Int, objects: UnsafeMutablePointer<ObjectType>, referenceObject: ObjectType, otherObject: ObjectType ) -> Void
+                applyCallback: (index1: Int, index2: Int, objects: UnsafeMutablePointer<ObjectType>, referenceObject: ObjectType, otherObject: ObjectType ) -> Void
 
         ) {
         
         let cellsToCheck: Int = Int(ceil(maxDistance / self.cellSize))
         
-        var objectIndex1 = 0
-        
-        for i in 0..<self.verticalCells {
-            for j in 0..<self.horizontalCells {
+        for objectIndex1 in 0..<self.numObjects {
 
-                let cell1 = self.cell(atHorizontalIndex: j, verticalIndex: i)
-                for m in 0..<cell1.count {
-                    let object1 : ObjectType = cell1.objects[m]
+            let object1: ObjectType = self.objects[objectIndex1]
+            let horizontalCellIndex: Int = Int(floor(Double(object1.x.x) / cellSize))
+            let verticalCellIndex: Int   = Int(floor(Double(object1.x.y) / cellSize))
 
-                    initializeCallback(index: objectIndex1, objects: nextObjects, referenceObject: object1)
-                    
-                    let minK = i - cellsToCheck < 0 ? 0 : i - cellsToCheck
-                    let maxK = i + cellsToCheck > (self.verticalCells - 1) ? (self.verticalCells - 1) : i + cellsToCheck
-                    
-                    var objectIndex2 = 0
-                    for k in minK ..< maxK {
-                        
-                        let minL = (j - cellsToCheck) < 0 ? 0 : (j - cellsToCheck)
-                        let maxL = (j + cellsToCheck) > (self.horizontalCells - 1) ? (self.horizontalCells - 1) : j + cellsToCheck
-                        
-                        for l in minL ..< maxL {
-                            // alright so we're dealing with block (j, i) against (l, k)
-                            let cell2 = self.cell(atHorizontalIndex: l, verticalIndex: k)
-                            for n in 0..<cell2.count {
-                                let object2 : ObjectType = cell2.objects[n]
-                                
-                                applyCallback(index1: objectIndex1, index2: objectIndex2, objects: nextObjects, referenceObject: object1, otherObject: object2)
-                                
-                            }
-                            
+            let minK = verticalCellIndex - cellsToCheck < 0 ? 0 : verticalCellIndex - cellsToCheck
+            let maxK = verticalCellIndex
+            
+            for k in minK ... maxK {
+                
+                let minL = (horizontalCellIndex - cellsToCheck) < 0 ? 0 : (horizontalCellIndex - cellsToCheck)
+                let maxL = horizontalCellIndex
+                
+                for l in minL ... maxL {
+                    // alright so we're dealing with block (j, i) against (l, k)
+                    let cell2 = self.cell(atHorizontalIndex: l, verticalIndex: k)
+                    for objectIndex2 in cell2.firstIndex..<(cell2.firstIndex+cell2.count) {
+                        if ( objectIndex2 > objectIndex1 ) {
+                            let object2 : ObjectType = cell2.objects[objectIndex2]
+                            applyCallback(index1: objectIndex1, index2: objectIndex2, objects: nextObjects, referenceObject: object1, otherObject: object2)
                         }
-                        objectIndex2 += 1
                     }
-                    objectIndex1 += 1
                 }
-                
-                
             }
         }
-        
-        
     }
     
 }
