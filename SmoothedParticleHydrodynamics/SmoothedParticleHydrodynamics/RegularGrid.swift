@@ -110,9 +110,10 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
         self.numObjects = numObjectsSoFar
     }
     
+    // todo: copy object list function 
+    
     func generateObjectsByApplyingSpacialFunction(nextObjects: UnsafeMutablePointer<ObjectType>,
                 maxDistance: Double,
-                initializeCallback: (index: Int, objects: UnsafeMutablePointer<ObjectType>, referenceObject: ObjectType ) -> Void,
                 applyCallback: (index1: Int, index2: Int, objects: UnsafeMutablePointer<ObjectType>, referenceObject: ObjectType, otherObject: ObjectType ) -> Void
 
         ) {
@@ -136,7 +137,7 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
             for k in minK ... maxK {
                 
                 let minL = (horizontalCellIndex - cellsToCheck) < 0 ? 0 : (horizontalCellIndex - cellsToCheck)
-                let maxL = horizontalCellIndex
+                let maxL = (horizontalCellIndex + cellsToCheck) >= self.horizontalCells ? (self.horizontalCells - 1) : (horizontalCellIndex + cellsToCheck)
                 for l in minL ... maxL {
                     let cell2 = self.cell(atHorizontalIndex: l, verticalIndex: k)
                     for objectIndex2 in cell2.firstIndex..<(cell2.firstIndex+cell2.count) {
