@@ -138,17 +138,18 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
                 
                 let minL = (horizontalCellIndex - cellsToCheck) < 0 ? 0 : (horizontalCellIndex - cellsToCheck)
                 let maxL = (horizontalCellIndex + cellsToCheck) >= self.horizontalCells ? (self.horizontalCells - 1) : (horizontalCellIndex + cellsToCheck)
-                for l in minL ... maxL {
-                    let cell2 = self.cell(atHorizontalIndex: l, verticalIndex: k)
-                    for objectIndex2 in cell2.firstIndex..<(cell2.firstIndex+cell2.count) {
-                        if ( objectIndex2 < objectIndex1 ) {
-                            let object2 : ObjectType = self.objects[objectIndex2]
-                            applyCallback(index1: objectIndex1, index2: objectIndex2, objects: nextObjects, referenceObject: object1, otherObject: object2)
-                        }
-                    } // end object2 iteration
-                } // end l
+                
+                let firstCell = self.cell(atHorizontalIndex: minL, verticalIndex: k)
+                let lastCell = self.cell(atHorizontalIndex: maxL, verticalIndex: k)
+                
+                for objectIndex2 in firstCell.firstIndex..<(lastCell.firstIndex+lastCell.count) {
+                    if ( objectIndex2 < objectIndex1 ) {
+                        let object2 : ObjectType = self.objects[objectIndex2]
+                        applyCallback(index1: objectIndex1, index2: objectIndex2, objects: nextObjects, referenceObject: object1, otherObject: object2)
+                    }
+                } // end object2 iteration
             } // end k
-        }
+        } // end objectIndex1
     }
     
 }
