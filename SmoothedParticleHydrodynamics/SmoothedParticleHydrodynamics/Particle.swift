@@ -25,7 +25,7 @@ struct Particle {
     }
 }
 
-func leonardJones(x1: CGPoint, x2: CGPoint, k: CGFloat) -> CGPoint {
+func leonardJones(x1 x1: CGPoint, x2: CGPoint, k: CGFloat) -> CGPoint {
     
     // computes Leonard Jones forces between two particles
     let k1 = k
