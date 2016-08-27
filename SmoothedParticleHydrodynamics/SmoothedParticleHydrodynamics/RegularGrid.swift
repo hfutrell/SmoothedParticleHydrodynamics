@@ -14,8 +14,8 @@ protocol CellObjectProtocol {
 
 internal class Cell<ObjectType> {
     var count: Int = 0
-    var firstIndex: Int
-    var objects: UnsafeMutablePointer<ObjectType> = nil
+    var firstIndex: Int = 0
+    var objects: UnsafeMutablePointer<ObjectType> = nil // todo: remove, it's not strictly necessary to have this pointer
     func insert(object: ObjectType) {
         objects[count] = object
         count += 1
@@ -125,25 +125,28 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
             let horizontalCellIndex: Int = Int(floor(Double(object1.x.x) / cellSize))
             let verticalCellIndex: Int   = Int(floor(Double(object1.x.y) / cellSize))
 
-            let minK = verticalCellIndex - cellsToCheck < 0 ? 0 : verticalCellIndex - cellsToCheck
+            // check the cells above (and equal row) as well as to the left (up to equal column)
+            // these have object indices that are less than or equal to object1 cell's object indices
+            // when we compare the two objects may actually be in the same cell
+            // in this case we take care to ensure that object2's index is less than object1's
+
+            let minK = (verticalCellIndex - cellsToCheck) < 0 ? 0 : (verticalCellIndex - cellsToCheck)
             let maxK = verticalCellIndex
             
             for k in minK ... maxK {
                 
                 let minL = (horizontalCellIndex - cellsToCheck) < 0 ? 0 : (horizontalCellIndex - cellsToCheck)
                 let maxL = horizontalCellIndex
-                
                 for l in minL ... maxL {
-                    // alright so we're dealing with block (j, i) against (l, k)
                     let cell2 = self.cell(atHorizontalIndex: l, verticalIndex: k)
                     for objectIndex2 in cell2.firstIndex..<(cell2.firstIndex+cell2.count) {
-                        if ( objectIndex2 > objectIndex1 ) {
-                            let object2 : ObjectType = cell2.objects[objectIndex2]
+                        if ( objectIndex2 < objectIndex1 ) {
+                            let object2 : ObjectType = self.objects[objectIndex2]
                             applyCallback(index1: objectIndex1, index2: objectIndex2, objects: nextObjects, referenceObject: object1, otherObject: object2)
                         }
-                    }
-                }
-            }
+                    } // end object2 iteration
+                } // end l
+            } // end k
         }
     }
     
