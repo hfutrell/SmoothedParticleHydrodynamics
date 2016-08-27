@@ -126,7 +126,7 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
             let horizontalCellIndex: Int = Int(floor(Double(object1.x.x) / cellSize))
             let verticalCellIndex: Int   = Int(floor(Double(object1.x.y) / cellSize))
 
-            // check the cells above (and equal row) as well as to the left (up to equal column)
+            // check the cells above (and equal row)
             // these have object indices that are less than or equal to object1 cell's object indices
             // when we compare the two objects may actually be in the same cell
             // in this case we take care to ensure that object2's index is less than object1's
