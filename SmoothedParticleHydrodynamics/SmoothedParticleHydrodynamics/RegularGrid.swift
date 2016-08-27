@@ -112,11 +112,7 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
     
     // todo: copy object list function 
     
-    func generateObjectsByApplyingSpacialFunction(nextObjects: UnsafeMutablePointer<ObjectType>,
-                maxDistance: Double,
-                applyCallback: (index1: Int, index2: Int, objects: UnsafeMutablePointer<ObjectType>, referenceObject: ObjectType, otherObject: ObjectType ) -> Void
-
-        ) {
+    func runPairwiseSpatialFunction(withCallback callback: (index1: Int, index2: Int, object1: ObjectType, object2: ObjectType ) -> Void, maxDistance: Double) {
         
         let cellsToCheck: Int = Int(ceil(maxDistance / self.cellSize))
         
@@ -127,7 +123,7 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
             let verticalCellIndex: Int   = Int(floor(Double(object1.x.y) / cellSize))
 
             let minL = (horizontalCellIndex - cellsToCheck) < 0 ? 0 : (horizontalCellIndex - cellsToCheck)
-            let maxL = (horizontalCellIndex + cellsToCheck) >= self.horizontalCells ? (self.horizontalCells - 1) : (horizontalCellIndex + cellsToCheck)
+            let maxL = (horizontalCellIndex + cellsToCheck) > (self.horizontalCells - 1) ? (self.horizontalCells - 1) : (horizontalCellIndex + cellsToCheck)
             
             // check the cells above (and equal row)
             // these have object indices that are less than or equal to object1 cell's object indices
@@ -142,16 +138,15 @@ class RegularGrid<ObjectType: CellObjectProtocol>  {
                 let lastCell = self.cell(atHorizontalIndex: maxL, verticalIndex: k)
                 for objectIndex2 in firstCell.firstIndex..<(lastCell.firstIndex+lastCell.count) {
                     let object2 : ObjectType = self.objects[objectIndex2]
-                    applyCallback(index1: objectIndex1, index2: objectIndex2, objects: nextObjects, referenceObject: object1, otherObject: object2)
+                    callback(index1: objectIndex1, index2: objectIndex2, object1: object1, object2: object2)
                 }
             }
             // special handling of row with k = maxK = verticalCellIndex, where early exit of loop is required to ensure objectIndex2 < objectIndex1
             let firstCell = self.cell(atHorizontalIndex: minL, verticalIndex: verticalCellIndex)
             for objectIndex2 in firstCell.firstIndex..<objectIndex1 {
                 let object2 : ObjectType = self.objects[objectIndex2]
-                applyCallback(index1: objectIndex1, index2: objectIndex2, objects: nextObjects, referenceObject: object1, otherObject: object2)
+                callback(index1: objectIndex1, index2: objectIndex2, object1: object1, object2: object2)
             }
-            
             
         } // end objectIndex1
     }
